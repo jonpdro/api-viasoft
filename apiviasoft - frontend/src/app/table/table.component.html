@@ -1,0 +1,28 @@
+<!-- TABELA PRINCIPAL -->
+<div class="container-fluid d-flex justify-content-center">
+    <div class="row">
+        <div class="col mt-3">
+            <div class="tabela mb-3">
+                <p-panel header="Disponibilidade de Serviços" [toggleable]="true">
+                    <p-table [rows]="8" [showCurrentPageReport]="true" [rowsPerPageOptions]="[7, 15]"
+                        [paginator]="true" [value]="listarDados">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="autorizador">Autorizador <p-sortIcon field="autorizador"></p-sortIcon></th>
+                                <th>Status</th>
+                                <th>Última Verificação</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-item>
+                            <tr>
+                                <td>{{ item.autorizador }}</td>
+                                <td>{{ item.statusServico }}</td>
+                                <td>{{ item.historicoTempo}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-panel>
+            </div>
+        </div>
+    </div>
+</div>
